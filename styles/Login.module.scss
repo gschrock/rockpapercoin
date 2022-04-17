@@ -1,62 +1,77 @@
 @import "variables.module";
 
-@media (min-width: $breakpoint-small) {
-  .main {
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  max-width: 71.75rem;
+  min-height: calc(100vh - 5.625rem);
+  margin: 0 auto 6rem;
+
+  @media (min-width: $breakpoint-small) {
     background-image: url(/rock-paper-coin.jpg);
     background-position: 50%;
     background-size: cover;
     margin-bottom: 0;
     max-width: 100vw;
-    min-height: calc(100vh - 5.625rem);
     width: 100%;
   }
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-}
-
 .login {
-  &--form-wrapper {
-    -webkit-box-shadow: 30px 30px 60px 0 rgb(74 74 74 / 25%);
+  &__form_wrapper {
     background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid hsla(300, 1%, 81%, 0.37);
-    box-shadow: 30px 30px 60px 0 rgb(74 74 74 / 25%);
+    width: 100vw;
+    padding: 0 1.5rem;
     margin: auto;
-    padding: 1.25rem 8rem;
-    width: 39.563rem;
+
+    @media (min-width: $breakpoint-small) {
+      -webkit-box-shadow: 30px 30px 60px 0 rgb(74 74 74 / 25%);
+      background-color: #fff;
+      border-radius: 5px;
+      border: 1px solid hsla(300, 1%, 81%, 0.37);
+      box-shadow: 30px 30px 60px 0 rgb(74 74 74 / 25%);
+      margin: auto;
+      padding: 1.25rem 8rem;
+      width: 39.563rem;
+    }
   }
 
-  &--form-header {
-    color: rgb(32, 58, 96);
+  &__form_header {
+    color: $brand-1;
     font-size: 1.688rem;
     font-weight: bold;
     margin: 0px;
-    text-align: center;
+    text-align: left;
+
+    @media (min-width: $breakpoint-small) {
+      text-align: center;
+    }
   }
 
-  &--form-subtext {
-    color: rgb(32, 58, 96);
+  &__form_subtext {
+    color: $brand-1;
     font-size: 1.125rem;
     margin: 0.5rem 0 0 0;
-    text-align: center;
+    text-align: left;
+
+    @media (min-width: $breakpoint-small) {
+      text-align: center;
+    }
   }
 
-  &--form {
-    background-color: rgb(255, 255, 255);
+  &__form {
+    background-color: $brand-2;
     display: block;
     margin-top: 0em;
   }
 
-  &--form-field {
+  &__form_field {
     margin-top: 1.875rem;
     width: 100%;
   }
 
-  &--form-field-label {
+  &__form_field_label {
     -webkit-box-pack: justify;
     display: flex;
     font-size: 1.125rem;
@@ -71,10 +86,10 @@
     }
   }
 
-  &--form-field-input {
+  &__form_field_input {
     border-radius: 5px;
     border: 1px solid rgba(207, 206, 207, 0.37);
-    color: rgb(32, 58, 96);
+    color: $brand-1;
     font-size: 1.125rem;
     height: 3rem;
     margin: 0.5rem 0px 0px;
@@ -83,18 +98,18 @@
     opacity: 0.6;
 
     &:focus-within {
-      border: 1px solid rgb(4, 149, 95);
+      border: 1px solid $brand-3;
       outline: none;
     }
     &:hover:not(:focus-within) {
-      border: 1px solid rgb(243, 142, 125);
+      border: 1px solid $brand-4;
     }
   }
 
-  &--form-password-reset {
+  &__form_password_reset {
     cursor: pointer;
 
-    &--text {
+    &__text {
       color: rgb(0, 0, 0);
       font-size: 1.125rem;
       margin: 0px;
@@ -103,13 +118,13 @@
     }
   }
 
-  &--login-button {
-    background-color: rgb(4, 149, 95);
+  &__login_button {
+    background-color: $brand-3;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2.5rem;
 
-    &--content-container {
+    &__content_container {
       display: flex;
       margin: auto;
     }
@@ -117,29 +132,29 @@
     &:disabled {
       background-color: rgba(0, 0, 0, 0.03);
       pointer-events: none;
-      &--text {
+      &__text {
         color: rgb(0, 0, 0);
       }
     }
 
     &:hover:not(:disabled) {
-      background-color: rgb(243, 142, 125);
+      background-color: $brand-4;
     }
 
-    &--text {
+    &__text {
       font-size: 1.125rem;
       line-height: normal;
       margin: 0px;
     }
   }
 
-  &--link-signup {
+  &__link_signup {
     margin: 3.813rem 0.125rem 0;
     text-align: center;
   }
 
-  &--link-signup-anchor {
-    color: rgb(243, 142, 125);
+  &__link_signup_anchor {
+    color: $brand-4;
     font-stretch: normal;
     font-style: normal;
     font-weight: normal;

@@ -1,20 +1,28 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { SingletonRouter, withRouter } from "next/router";
 import Header from "../components/header";
-import styles from "../styles/Login.module.scss";
 
-const Success: NextPage = () => {
-  return (
-    <>
-      <Head>
-        <title>Rock Paper Coin - Success</title>
-      </Head>
+interface Props {
+  router?: SingletonRouter;
+}
 
-      <Header />
+const Success: NextPage = (props: Props) => (
+  <>
+    <Head>
+      <title>Rock Paper Coin - Success</title>
+    </Head>
 
-      <main className={styles.main}>Success!</main>
-    </>
-  );
-};
+    <Header />
 
-export default Success;
+    <main>
+      Success!
+      <div>
+        EMAIL: {props?.router?.query.email} PASSWORD:{" "}
+        {props?.router?.query.password}
+      </div>
+    </main>
+  </>
+);
+
+export default withRouter(Success);

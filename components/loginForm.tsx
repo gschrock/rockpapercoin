@@ -20,24 +20,27 @@ const LoginForm: FunctionComponent = () => {
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push("/success");
+    router.push({
+      pathname: "/success",
+      query: { email: formState.email, password: formState.password },
+    });
   };
 
   return (
     <>
-      <div className={styles["login--form-wrapper"]}>
-        <h2 className={styles["login--form-header"]}>Welcome back!</h2>
-        <p className={styles["login--form-subtext"]}>Sign in and get to it.</p>
+      <div className={styles.login__form_wrapper}>
+        <h2 className={styles.login__form_header}>Welcome back!</h2>
+        <p className={styles.login__form_subtext}>Sign in and get to it.</p>
         <form
-          className={styles["login--form"]}
+          className={styles.login__form}
           onSubmit={(e) => handleFormSubmit(e)}
         >
-          <div className={styles["login--form-field"]}>
-            <div className={styles["login--form-field-label"]}>
+          <div className={styles.login__form_field}>
+            <div className={styles.login__form_field_label}>
               <p>Email</p>
             </div>
             <input
-              className={styles["login--form-field-input"]}
+              className={styles.login__form_field_input}
               type="text"
               name="email"
               placeholder="Email Address"
@@ -46,12 +49,12 @@ const LoginForm: FunctionComponent = () => {
               onChange={(e) => handleChange(e)}
             />
           </div>
-          <div className={styles["login--form-field"]}>
-            <div className={styles["login--form-field-lable"]}>
+          <div className={styles.login__form_field}>
+            <div className={styles.login__form_field_label}>
               <p>Password</p>
             </div>
             <input
-              className={styles["login--form-field-input"]}
+              className={styles.login__form_field_input}
               type="password"
               name="password"
               placeholder="Password"
@@ -60,23 +63,23 @@ const LoginForm: FunctionComponent = () => {
               onChange={(e) => handleChange(e)}
             />
           </div>
-          <div className={styles["login--form-password-reset"]}>
-            <p className={styles["login--form-password-reset--text"]}>
+          <div className={styles.login__form_password_reset}>
+            <p className={styles.login__form_password_reset__text}>
               Forgot your password?
             </p>
           </div>
           <button
-            className={styles["login--login-button"]}
+            className={styles.login__login_button}
             type="submit"
             disabled={formState.email === "" || formState.password === ""}
           >
-            <div className={styles["login--login-button--content-container"]}>
-              <p className={styles["login--login-button--text"]}>Sign In</p>
+            <div className={styles.login__login_button__content_container}>
+              <p className={styles.login__login_button__text}>Sign In</p>
             </div>
           </button>
         </form>
-        <div className={styles["login--link-signup"]}>
-          <a className={styles["login--link-signup-anchor"]}>
+        <div className={styles.login__link_signup}>
+          <a className={styles.login__link_signup_anchor}>
             Don&apos;t have an account? Create one now!
           </a>
         </div>

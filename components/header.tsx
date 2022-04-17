@@ -9,9 +9,9 @@ const Header: FunctionComponent = () => (
         <Logo />
       </a>
     </Link>
-    <button className="button--blue">
-      <div className="button--content">
-        <p className="button--text">Sign Up</p>
+    <button className="button__blue">
+      <div className="button__content">
+        <p className="button__text">Sign Up</p>
       </div>
     </button>
   </header>

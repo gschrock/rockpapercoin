@@ -4,20 +4,18 @@ import Header from "../components/header";
 import LoginForm from "../components/loginForm";
 import styles from "../styles/Login.module.scss";
 
-const Login: NextPage = () => {
-  return (
-    <>
-      <Head>
-        <title>Rock Paper Coin - Login</title>
-      </Head>
+const Login: NextPage = () => (
+  <>
+    <Head>
+      <title>Rock Paper Coin - Login</title>
+    </Head>
 
-      <Header />
+    <Header />
 
-      <main className={styles.main}>
-        <LoginForm />
-      </main>
-    </>
-  );
-};
+    <main className={styles.main}>
+      <LoginForm />
+    </main>
+  </>
+);
 
 export default Login;
