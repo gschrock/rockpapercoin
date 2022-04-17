@@ -30,6 +30,10 @@ button {
   min-width: fit-content;
   padding: 0.5rem 1rem;
   width: 11.975rem;
+
+  &:not(:disabled) {
+    color: rgb(255, 255, 255);
+  }
 }
 
 .button {
@@ -37,6 +41,9 @@ button {
     background-color: rgb(32, 58, 96);
     margin-left: auto;
     width: 7rem;
+    &:hover {
+      background-color: rgb(243, 142, 125);
+    }
   }
 
   &--content {

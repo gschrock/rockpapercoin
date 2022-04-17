@@ -104,6 +104,7 @@
   }
 
   &--login-button {
+    background-color: rgb(4, 149, 95);
     margin-left: auto;
     margin-right: auto;
     margin-top: 2.5rem;
@@ -113,17 +114,22 @@
       margin: auto;
     }
 
-    &--disabled {
+    &:disabled {
       background-color: rgba(0, 0, 0, 0.03);
       pointer-events: none;
+      &--text {
+        color: rgb(0, 0, 0);
+      }
+    }
+
+    &:hover:not(:disabled) {
+      background-color: rgb(243, 142, 125);
     }
 
     &--text {
-      color: rgb(0, 0, 0);
       font-size: 1.125rem;
       line-height: normal;
       margin: 0px;
-      opacity: 0.3;
     }
   }
 
@@ -141,5 +147,10 @@
     line-height: normal;
     text-decoration: none;
     font-size: 1.125rem;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
   }
 }
